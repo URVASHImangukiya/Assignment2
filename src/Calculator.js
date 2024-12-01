@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import Button from './Button';  // Import Button component
+import Button from './Button';  
 
 function KeyPadComponent() {
   const [text1, setText] = useState("");
-  const [showImage, setShowImage] = useState(false);  // State to toggle image visibility
+  const [showImage, setShowImage] = useState(false);  
 
-  // ClickHandle function to handle button clicks
+  
   const ClickHandle = (e) => {
     if (e.target.value === "C") {
-      setText("");  // Clear the display
+      setText("");  
     } else if (e.target.value === "=") {
-      setText(eval(text1));  // Evaluate the expression entered
+      setText(eval(text1));  
     } else if (e.target.value === "Show Me") {
-      setShowImage(!showImage);  // Toggle image visibility
+      setShowImage(!showImage);  
     } else if (e.target.value === "Square") {
-      const number = parseFloat(text1);  // Convert the text to a number
+      const number = parseFloat(text1);  
       if (!isNaN(number)) {
-        setText(number * number);  // Calculate the square of the number
+        setText(number * number);  
       } else {
-        setText("Invalid input");  // Handle invalid input
+        setText("Invalid input");  
       }
     } else {
-      setText(text1 + e.target.value);  // Append the clicked value to the display
+      setText(text1 + e.target.value);  
     }
   };
 
